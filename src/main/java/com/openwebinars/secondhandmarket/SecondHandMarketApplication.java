@@ -25,22 +25,22 @@ public class SecondHandMarketApplication {
 	public CommandLineRunner initData(UsuarioServicio usuarioServicio, ProductoServicio productoServicio) {
 		return args -> {
 
-			Usuario usuario = new Usuario("Luis Miguel", "López Magaña", null, "luismi.lopez@openwebinars.net", "luismi");
+			Usuario usuario = new Usuario("Ismael", "Heras Salvador", null, "ismaelom83@gmail.com", "luismi");
 			usuario = usuarioServicio.registrar(usuario);
 
-			Usuario usuario2 = new Usuario("Antonio", "García Martín", null, "antonio.garcia@openwebinars.net", "antonio");
+			Usuario usuario2 = new Usuario("Jose", "Salvador Temprano", null, "jose88@gmail.com", "antonio");
 			usuario2 = usuarioServicio.registrar(usuario2);
 
 			
 			List<Producto> listado = Arrays.asList(new Producto("Bicicleta de montaña", 100.0f,
-					"https://www.decathlon.es/media/835/8350582/big_23c25284-2810-415d-8bcc-e6bebdb536fc.jpg", usuario),
-					new Producto("Golf GTI Serie 2", 2500.0f,
-							"https://www.minicar.es/large/Volkswagen-Golf-GTi-G60-Serie-II-%281990%29-Norev-1%3A18-i22889.jpg",
+					"https://www.buhobike.com/c/3001-medium_default_2x/rigidas-aluminio.jpg", usuario),
+					new Producto("Renault-5 Copa Turbo", 2500.0f,
+							"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/480/public/media/image/2016/12/600833-mitos-automovil-saltaba-turbo-r5.jpg?itok=gKEbtuIV",
 							usuario),
-					new Producto("Raqueta de tenis", 10.5f, "https://imgredirect.milanuncios.com/fg/2311/04/tenis/Raqueta-tenis-de-segunda-mano-en-Madrid-231104755_1.jpg?VersionId=T9dPhTf.3ZWiAFjnB7CvGKsvbdfPLHht", usuario),
-					new Producto("Xbox One X", 425.0f, "https://images.vibbo.com/635x476/860/86038583196.jpg", usuario2),
-					new Producto("Trípode flexible", 10.0f, "https://images.vibbo.com/635x476/860/86074256163.jpg", usuario2),
-					new Producto("Iphone 7 128 GB", 350.0f, "https://store.storeimages.cdn-apple.com/4667/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/rosegold/iphone7-rosegold-select-2016?wid=470&hei=556&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1472430205982", usuario2));
+					new Producto("Guitarra Acustica", 100.0f, "https://mercasonic.soniccdn.com/sda/640/2428/3122428.jpg", usuario),
+					new Producto("Play Station 4", 425.0f, "https://upload.wikimedia.org/wikipedia/commons/3/33/PlayStation_Four.png", usuario2),
+					new Producto("Vinilo AC/DC", 10.0f, "https://www.emp-online.es/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw0048103f/images/3/0/4/4/304400-emp.jpg?sw=1000&sh=800&sm=fit&sfrm=png", usuario2),
+					new Producto("Xiaomi M-10", 250.0f, "https://pbs.twimg.com/media/Dyjccg1UcAA1ZtA.jpg", usuario2));
 			
 			listado.forEach(productoServicio::insertar);
 			
